@@ -1,0 +1,27 @@
+services:
+  db:
+    build: ./db
+    container_name: db-container
+    env_file:
+      - ./ecom_proj/.env
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  backend:
+    build: ./ecom_proj
+    container_name: django-container
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - ./ecom_proj/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ecom_proj:/app
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
