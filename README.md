@@ -27,7 +27,7 @@ This project was originally developed as a **Django REST Framework assessment** 
 
 ## Preview
 
-![E-Commerce API Preview](assets/ecommerce-api.png)
+![E-Commerce API Preview](assets/ecommerce-api.gif)
 
 ## Tech Stack
 
